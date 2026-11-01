@@ -1,16 +1,16 @@
 def type_check(*types):
     def dec(func):
-        def w(*args):
+        def wrapper(*args):
             for i in range(len(args)):
                 if not isinstance(args[i], types[i]):
                     raise TypeError("error type")
             result = func(*args)
             return result
-        return w
+        return wrapper
     return dec
 
 @type_check(int, int)
-def add(x, y):
-    print(x + y)
+def add(a, b):
+    print(a + b)
 
-add(2, "ggggg")
+add(2, 3)
