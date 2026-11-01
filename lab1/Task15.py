@@ -17,8 +17,10 @@ for produkt in produkts:
     if summa > maxsumma:
         maxsumma = summa
         best_product = produkt['name']
-
 print("Самый прибыльный товар:", best_product, "Общая сумма:", maxsumma)
 
-unique_names = set(produkt['name'] for produkt in produkts)
+unique_names = set()
+for produkt in produkts:
+    unique_names.add(produkt['name'])
+
 print("Количество уникальных наименований:", len(unique_names))
